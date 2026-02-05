@@ -17,7 +17,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -63,6 +63,22 @@
             width: 4px;
             height: 100%;
             background: var(--bright-blue);
+        }
+
+        /* Brand Header */
+        .brand-header {
+            margin-bottom: 24px;
+        }
+
+        .brand-logo {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--white);
+        }
+
+        .brand-logo span {
+            color: var(--bright-blue);
         }
 
         /* Profile Section */
@@ -123,17 +139,18 @@
             justify-content: center;
             gap: 12px;
             margin-bottom: 16px;
-            font-size: 15px;
-            font-weight: 400;
+            font-size: 17px;
+            font-weight: 500;
         }
 
         .contact-item i {
             color: var(--bright-blue);
-            width: 20px;
-            font-size: 16px;
+            width: 24px;
+            font-size: 18px;
         }
 
-        .contact-item a {
+        .contact-item a,
+        .contact-item span {
             color: var(--white);
             text-decoration: none;
             transition: color 0.2s ease;
@@ -235,9 +252,20 @@
             padding-top: 24px;
         }
 
+        .bogen-logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 16px;
+        }
+
+        .bogen-logo span {
+            color: var(--bright-blue);
+        }
+
         .eb-logo {
             height: 40px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             opacity: 0.9;
         }
 
@@ -246,7 +274,7 @@
             font-weight: 400;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            opacity: 0.6;
+            opacity: 0.7;
         }
 
         /* Responsive */
@@ -277,6 +305,11 @@
     <div class="accent-bar"></div>
 
     <div class="container">
+        <!-- Brand Header -->
+        <div class="brand-header">
+            <div class="brand-logo">Bogen<span>.ai</span></div>
+        </div>
+
         <!-- Profile Section -->
         <section class="profile-section">
             <img src="assets/headshot.jpg" alt="Edmund Bogen" class="headshot">
@@ -333,6 +366,7 @@
 
         <!-- Branding -->
         <div class="branding">
+            <div class="bogen-logo">Bogen<span>.ai</span></div>
             <img src="assets/eb-logo.png" alt="The Edmund Bogen Team" class="eb-logo">
             <p class="elliman-text">Douglas Elliman Real Estate</p>
         </div>
