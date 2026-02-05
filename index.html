@@ -190,6 +190,74 @@
             margin-right: 10px;
         }
 
+        /* Action Buttons Row */
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .action-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--bright-blue);
+        }
+
+        .action-btn i {
+            font-size: 16px;
+            color: var(--bright-blue);
+        }
+
+        /* Secondary CTA Button */
+        .cta-secondary {
+            display: block;
+            width: 100%;
+            padding: 16px 32px;
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--bright-blue);
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 16px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .cta-secondary:hover {
+            background: var(--bright-blue);
+            color: var(--white);
+        }
+
+        .cta-secondary i {
+            margin-right: 10px;
+        }
+
         /* Social Links */
         .social-links {
             display: flex;
@@ -340,10 +408,25 @@
             </div>
         </section>
 
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="tel:+15612357575" class="action-btn">
+                <i class="fas fa-phone"></i>Call
+            </a>
+            <a href="sms:+15612357575" class="action-btn">
+                <i class="fas fa-comment"></i>Text
+            </a>
+        </div>
+
         <!-- Save Contact Button -->
         <button class="cta-button" onclick="downloadVCard()">
             <i class="fas fa-user-plus"></i>Save Contact
         </button>
+
+        <!-- Book a Meeting Button -->
+        <a href="https://calendly.com/edmund-15/reignation-meeting-ed" target="_blank" class="cta-secondary">
+            <i class="fas fa-calendar"></i>Book a Meeting
+        </a>
 
         <!-- Social Links -->
         <div class="social-links">
