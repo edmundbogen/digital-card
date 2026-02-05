@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a3e5c">
+    <title>Edmund Bogen | Director of Luxury Sales</title>
+    <meta name="description" content="Edmund Bogen - Director of Luxury Sales at Douglas Elliman Real Estate. Luxury homes in Boca Raton and South Florida.">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Edmund Bogen | Director of Luxury Sales">
+    <meta property="og:description" content="Luxury Real Estate Expert - From Palm Beach to Miami">
+    <meta property="og:type" content="profile">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        :root {
+            --navy: #1a3e5c;
+            --bright-blue: #00a8e1;
+            --white: #ffffff;
+            --black: #000000;
+            --light-gray: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(180deg, var(--navy) 0%, #0d2233 100%);
+            min-height: 100vh;
+            color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
+            text-align: center;
+        }
+
+        /* Accent Bar */
+        .accent-bar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--bright-blue);
+        }
+
+        /* Profile Section */
+        .profile-section {
+            margin-bottom: 32px;
+        }
+
+        .headshot {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bright-blue);
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--bright-blue);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .company {
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            opacity: 0.9;
+        }
+
+        /* Divider */
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: var(--bright-blue);
+            margin: 32px auto;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            margin-bottom: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .contact-item i {
+            color: var(--bright-blue);
+            width: 20px;
+            font-size: 16px;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--bright-blue);
+        }
+
+        /* Primary CTA Button */
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 18px 32px;
+            background: var(--bright-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 16px;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: #0090c4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 168, 225, 0.4);
+        }
+
+        .cta-button i {
+            margin-right: 10px;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link:hover {
+            background: var(--bright-blue);
+            border-color: var(--bright-blue);
+            transform: translateY(-3px);
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .qr-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 16px;
+        }
+
+        #qrcode {
+            display: inline-block;
+            padding: 12px;
+            background: var(--white);
+            border-radius: 8px;
+        }
+
+        #qrcode img {
+            display: block;
+        }
+
+        /* Branding Footer */
+        .branding {
+            margin-top: 40px;
+            padding-top: 24px;
+        }
+
+        .eb-logo {
+            height: 40px;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .elliman-text {
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 360px) {
+            .container {
+                padding: 32px 20px 48px;
+            }
+
+            .name {
+                font-size: 24px;
+            }
+
+            .headshot {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        /* Add to home screen prompt styling */
+        @media (display-mode: standalone) {
+            body {
+                padding-top: env(safe-area-inset-top);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="accent-bar"></div>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <img src="assets/headshot.jpg" alt="Edmund Bogen" class="headshot">
+            <h1 class="name">Edmund Bogen</h1>
+            <p class="title">Director of Luxury Sales</p>
+            <p class="company">Douglas Elliman Real Estate</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Contact Info -->
+        <section class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+15612357575">(561) 235-7575</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:Edmund@bogenhomes.com">Edmund@bogenhomes.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-globe"></i>
+                <a href="https://bogenhomes.com" target="_blank">bogenhomes.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <span>Boca Raton, FL 33432</span>
+            </div>
+        </section>
+
+        <!-- Save Contact Button -->
+        <button class="cta-button" onclick="downloadVCard()">
+            <i class="fas fa-user-plus"></i>Save Contact
+        </button>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://instagram.com/edmundbogen" target="_blank" class="social-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com/in/edmundbogen" target="_blank" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://bogenhomes.com" target="_blank" class="social-link" aria-label="Website">
+                <i class="fas fa-globe"></i>
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <section class="qr-section">
+            <p class="qr-label">Scan to View Card</p>
+            <div id="qrcode"></div>
+        </section>
+
+        <!-- Branding -->
+        <div class="branding">
+            <img src="assets/eb-logo.png" alt="The Edmund Bogen Team" class="eb-logo">
+            <p class="elliman-text">Douglas Elliman Real Estate</p>
+        </div>
+    </div>
+
+    <script>
+        // Generate QR Code
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageUrl = window.location.href;
+            new QRCode(document.getElementById("qrcode"), {
+                text: pageUrl,
+                width: 120,
+                height: 120,
+                colorDark: "#1a3e5c",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        });
+
+        // Download vCard
+        function downloadVCard() {
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+N:Bogen;Edmund;;;
+FN:Edmund Bogen
+ORG:Douglas Elliman Real Estate
+TITLE:Director of Luxury Sales
+TEL;TYPE=CELL:+1-561-235-7575
+EMAIL;TYPE=WORK:Edmund@bogenhomes.com
+ADR;TYPE=WORK:;;444 East Palmetto Park Road;Boca Raton;FL;33432;USA
+URL:https://bogenhomes.com
+X-SOCIALPROFILE;TYPE=instagram:https://instagram.com/edmundbogen
+X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/edmundbogen
+NOTE:Luxury Real Estate Expert - From Palm Beach to Miami
+END:VCARD`;
+
+            const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Edmund_Bogen.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
