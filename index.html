@@ -258,6 +258,30 @@
             margin-right: 10px;
         }
 
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--bright-blue);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
         /* Social Links */
         .social-links {
             display: flex;
@@ -428,6 +452,11 @@
             <i class="fas fa-calendar"></i>Book a Meeting
         </a>
 
+        <!-- Send My Card Button -->
+        <button class="cta-secondary" onclick="sendCard()" id="sendCardBtn">
+            <i class="fas fa-paper-plane"></i>Send My Card
+        </button>
+
         <!-- Social Links -->
         <div class="social-links">
             <a href="https://instagram.com/edmundbogen" target="_blank" class="social-link" aria-label="Instagram">
@@ -455,7 +484,45 @@
         </div>
     </div>
 
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
     <script>
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        // Send / Share Card
+        function sendCard() {
+            const cardUrl = window.location.href;
+            const shareData = {
+                title: 'Edmund Bogen | Director of Luxury Sales',
+                text: 'Check out Edmund Bogen\'s digital business card:',
+                url: cardUrl
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(cardUrl).then(() => {
+                    showToast('Card link copied! Paste it in a text or email.');
+                }).catch(() => {
+                    // Fallback for older browsers
+                    const textarea = document.createElement('textarea');
+                    textarea.value = cardUrl;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    showToast('Card link copied! Paste it in a text or email.');
+                });
+            }
+        }
+
         // Generate QR Code
         document.addEventListener('DOMContentLoaded', function() {
             const pageUrl = window.location.href;
